@@ -9,10 +9,10 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: Infinity,
-      cacheTime: Infinity
-    }
-  }
-})
+      cacheTime: Infinity,
+    },
+  },
+});
 
 const App = () => {
   return (

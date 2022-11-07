@@ -4,32 +4,32 @@ import fetchPet from './fetchPet';
 
 const Details = () => {
   const { id } = useParams();
-  const results = useQuery(["details", id], fetchPet)
+  const results = useQuery(['details', id], fetchPet);
 
-  if(results.isError) {
-    return (
-        <h3>Unable to fetch the data</h3>
-    )
+  if (results.isError) {
+    return <h3>Unable to fetch the data</h3>;
   }
 
-  if(results.isLoading) {
+  if (results.isLoading) {
     return (
-        <div className="loading-pane">
-            <h2 className="loader">🌌</h2>
-        </div>
-    )
+      <div className="loading-pane">
+        <h2 className="loader">🌌</h2>
+      </div>
+    );
   }
 
-  const pet = results.data.pets[0]
+  const pet = results.data.pets[0];
 
   return (
     <div className="details">
-        <div>
-            <h1>{pet.name}</h1>
-            <h2>{pet.animal} - {pet.breed} - {pet.city}, {pet.state}</h2>
-            <button>Adopt {pet.name}</button>
-            <p>{pet.description}</p>
-        </div>
+      <div>
+        <h1>{pet.name}</h1>
+        <h2>
+          {pet.animal} - {pet.breed} - {pet.city}, {pet.state}
+        </h2>
+        <button>Adopt {pet.name}</button>
+        <p>{pet.description}</p>
+      </div>
     </div>
   );
 };
