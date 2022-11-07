@@ -1,6 +1,6 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import SearchParams from "./SearchParams";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import SearchParams from './SearchParams';
 
 const App = () => {
   return (
@@ -8,9 +8,9 @@ const App = () => {
       <h1>Adopt me</h1>
       <SearchParams />;
     </div>
-  )
+  );
 };
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(<App />);
