@@ -8,15 +8,15 @@ const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile'];
 
 const SearchParams = () => {
   const [requestParams, setRequestParams] = useState({
-    animal: "",
-    location: "",
-    breed: ""
-  })
+    animal: '',
+    location: '',
+    breed: '',
+  });
   const [animal, setAnimal] = useState('');
   const [breeds] = useBreedList(animal);
 
-  const results = useQuery(["search", requestParams], fetchSearch)
-  const pets = results?.data?.pets ?? []
+  const results = useQuery(['search', requestParams], fetchSearch);
+  const pets = results?.data?.pets ?? [];
 
   return (
     <div className="search-params">
@@ -25,19 +25,15 @@ const SearchParams = () => {
           e.preventDefault();
           const formData = new FormData(e.target);
           const obj = {
-            animal: formData.get("animal") ?? "",
-            location: formData.get("location") ?? "",
-            breed: formData.get("breed") ?? "",
-          }
+            animal: formData.get('animal') ?? '',
+            location: formData.get('location') ?? '',
+            breed: formData.get('breed') ?? '',
+          };
           setRequestParams(obj);
         }}
       >
         <label htmlFor="location">
-          <input
-            name="location"
-            placeholder="Location"
-            id="location"
-          />
+          <input name="location" placeholder="Location" id="location" />
         </label>
         <label htmlFor="Animal">
           <select
@@ -54,11 +50,7 @@ const SearchParams = () => {
           </select>
         </label>
         <label htmlFor="breed">
-          <select
-            disabled={!breeds.length}
-            name="breed"
-            id="breed"
-          >
+          <select disabled={!breeds.length} name="breed" id="breed">
             <option />
             {breeds.map((breed) => (
               <option key={breed}>{breed}</option>
