@@ -9,7 +9,7 @@ class Carousel extends Component {
     images: ['http://pets-images.dev-apis.com/pets/none.jpg'],
   };
 
-  handleClickevent = (e) => {
+  handleIndexClick = (e) => {
     this.setState({
       active: +e.target.dataset.index,
     });
@@ -25,7 +25,7 @@ class Carousel extends Component {
           {images.map((photo, index) => (
             // eslint-disable-next-line
             <img
-              onClick={this.handleClickevent}
+              onClick={this.handleIndexClick}
               data-index={index}
               key={photo}
               src={photo}
