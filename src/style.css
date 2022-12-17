@@ -358,13 +358,6 @@ header {
     }
 }
 
-.loading-pane {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 15px;
-}
-
 form .pet {
     float: unset;
     margin: 0 auto;
@@ -379,12 +372,4 @@ form .pet {
     to {
         transform: rotate(360deg);
     }
-}
-
-.mini.loading-pane {
-    height: 34px;
-}
-
-.mini .loader {
-    font-size: 34px;
 }

@@ -9,9 +9,7 @@ const Pet = (props) => {
   }
   return (
     <Link to={`/details/${id}`} className="relative block">
-      <div className="image-container">
-        <img src={hero} alt={name} />
-      </div>
+      <img src={hero} alt={name} className="h-96" />
       <div className="absolute bottom-0 left-o bg-gradient-to-tr from-white to-transparent pr-2 pt-2">
         <h1>{name}</h1>
         <h2>
